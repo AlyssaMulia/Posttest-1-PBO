@@ -12,7 +12,7 @@ Kelas : Sistem Informasi - A
   ![Screenshot 2024-09-29 072227](https://github.com/user-attachments/assets/85c96b3a-bbad-4220-8c70-179c34da617a)
 
 
-- Jika menginput pilihan "1" maka akan masuk ke bagian create dan disini user dapat menambahkan tempat wisata dengan memasukkan nama, lokasi, dan kategori wisata
+- Jika menginput pilihan "1" maka akan masuk ke bagian create dan disini user dapat menambahkan tempat wisata dengan memasukkan nama, lokasi, dan kategori wisata. Nantinta ID wisata akan dibuat secara otomatis oleh program
 
   ![Screenshot 2024-09-29 072340](https://github.com/user-attachments/assets/1e56b921-15ef-4872-b157-a6dd413fd501)
 
