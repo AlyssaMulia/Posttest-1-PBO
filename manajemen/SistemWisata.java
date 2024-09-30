@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class SistemWisata {
     private static ArrayList<TempatWisata> daftarWisata = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
+    private static int idCounter = 1;
 
     public static void tampilkanMenu() {
         int pilihan;
@@ -20,7 +21,7 @@ public class SistemWisata {
             System.out.println("5. Keluar");
             System.out.print("Pilih menu (1/2/3/4/5): ");
             pilihan = scanner.nextInt();
-            scanner.nextLine();  // Membersihkan newline dari input sebelumnya
+            scanner.nextLine();  
 
             switch (pilihan) {
                 case 1:
@@ -53,7 +54,7 @@ public class SistemWisata {
         System.out.print("Masukkan Kategori Wisata: ");
         String kategori = scanner.nextLine();
 
-        TempatWisata wisata = new TempatWisata(nama, lokasi, kategori);
+        TempatWisata wisata = new TempatWisata(idCounter++,nama, lokasi, kategori);
         daftarWisata.add(wisata);
         System.out.println("Wisata berhasil ditambahkan.");
     }
@@ -81,6 +82,9 @@ public class SistemWisata {
 
     private static void ubahWisata() {
         System.out.println("\n=== Ubah Wisata ===");
+        tampilkanWisata();
+        
+        if (!daftarWisata.isEmpty()) {
         System.out.print("Masukkan nama wisata yang ingin diubah: ");
         String nama = scanner.nextLine();
         TempatWisata wisata = getTempatWisataByName(nama);
@@ -100,11 +104,15 @@ public class SistemWisata {
             System.out.println("Wisata berhasil diubah.");
         } else {
             System.out.println("Wisata dengan nama tersebut tidak ditemukan.");
+            }
         }
     }
 
     private static void hapusWisata() {
         System.out.println("\n=== Hapus Wisata ===");
+        tampilkanWisata();
+        
+        if (!daftarWisata.isEmpty()) {
         System.out.print("Masukkan nama wisata yang ingin dihapus: ");
         String nama = scanner.nextLine();
         TempatWisata wisata = getTempatWisataByName(nama);
@@ -114,6 +122,7 @@ public class SistemWisata {
             System.out.println("Wisata berhasil dihapus.");
         } else {
             System.out.println("Wisata dengan nama tersebut tidak ditemukan.");
+            }
         }
     }
 }
