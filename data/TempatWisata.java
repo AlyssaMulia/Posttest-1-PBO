@@ -1,16 +1,26 @@
 package data;
 
 public class TempatWisata {
+    private int id;
     private String nama;
     private String lokasi;
     private String kategori;
 
-    public TempatWisata(String nama, String lokasi, String kategori) {
+    public TempatWisata(int id, String nama, String lokasi, String kategori) {
+        this.id = id;
         this.nama = nama;
         this.lokasi = lokasi;
         this.kategori = kategori;
     }
 
+    public int getId() {
+        return id;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getNama() {
         return nama;
     }
@@ -28,6 +38,7 @@ public class TempatWisata {
     }
 
     public void tampilkanInfo() {
+        System.out.println("ID: " + id);
         System.out.println("Nama: " + nama);
         System.out.println("Lokasi: " + lokasi);
         System.out.println("Kategori: Wisata " + kategori);
